@@ -29,6 +29,7 @@ body {
     color: black;
 }
 
+
 /* Content style */
 .main-content {
     margin: 5% 10% 0 10%;
@@ -41,7 +42,6 @@ body {
 
 .main-footer {
     font-family: Helvetica, Arial, sans-serif;
-    /*font-size: 1em;*/
     text-align: right;
     margin: 2%;
 }
