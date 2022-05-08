@@ -2,7 +2,6 @@
 .btn {
     font-size: 1.5em;
     border: none; /* Remove borders */
-    color: white; /* Add a text color */
     padding: 14px 28px; /* Add some padding */
     cursor: pointer; /* Add a pointer cursor on mouse-over */
     width: 600px;
@@ -14,6 +13,11 @@
 
 .cat_button:hover {
     background-color: #46a049;
+}
+
+a {
+    text-decoration: none !important;
+    color: white;
 }
 
 .button_placement {
