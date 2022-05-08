@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <title><?= $title; ?></title>
 </head>
 
-<style>
-  .main-content {
-    margin: 0 10% 0 10%;
-  }
-</style>
+<link rel="stylesheet" href="styles/layout_style.css">
+<link rel="script" href="scripts/layout_script.js">
+<!--Стиль иконок-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--Выставляем стиль в зависимости от контента страницы-->
+<?= $style_link; ?>
+
+<header>
+  <div id="navbar">
+    <a href="/index.php">Главная</a>
+    <a href=>Категории</a>
+  </div>
+</header>
 
 <body>
-
 <div class="main-content">
   <main class="content">
-    <h1><?= $content; ?></h1>
+    <?= $content; ?>
   </main>
 </div>
-
 </body>
+
+<footer>
+  <hr class="solid">
+  <div class="main-footer">
+    <a href="https://github.com/bogdanpashtet/web_kursach" class="fa fa-github fa-2x"></a>
+    <a href="https://vk.com/abcd012" class="fa fa-vk fa-2x"></a>
+  </div>
+</footer>
+
 </html>
