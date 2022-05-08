@@ -29,14 +29,16 @@
         background-color: #ddd;
         color: black;
     }
+
 </style>
 
+<header>
 
-<div id="navbar">
-    <a href="#home">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-</div>
+    <div id="navbar">
+        <a href="index.php">Главная</a>
+        <a href=>Категории</a>
+    </div>
+
 
 <script>
     var prevScrollpos = window.pageYOffset;
@@ -50,3 +52,4 @@
         prevScrollpos = currentScrollPos;
     }
 </script>
+</header>
