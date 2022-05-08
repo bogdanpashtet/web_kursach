@@ -1,8 +1,9 @@
 <?php
-
-require_once('header.php');
-
 $title = "Архив статей";
+
+
+include_once('templates/header.php');
+
 $content = "
   <p><b>This example demonstrates how to hide a navbar when the user starts to scroll the page.</b></p>
   <p>Scroll down this frame to see the effect!</p>
@@ -20,5 +21,9 @@ $content = "
   
   
 ";
-include_once "layout.html"
+
+include_once "layout.html";
+
+include_once("templates/footer.php");
+
 ?>
