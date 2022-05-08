@@ -1,9 +1,11 @@
 <?php
 
-$title = "Название категории";
+
+
+$title = isset($_POST['category']);
 
 $content = "<p>Пизда</p>";
 
-include_once "layout.html";
+include_once "templates/layout.html";
 
 ?>
