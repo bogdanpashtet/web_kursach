@@ -27,8 +27,23 @@ switch (($_GET['category'])) {
         break;
 }
 
+$mysqli = new mysqli("localhost", "admin", "Ruslan29!", "web_kursach");
+/* проверка соединения */
+if (mysqli_connect_errno()) {
+    printf("Connect failed: %s\n", mysqli_connect_error());
+    exit();
+}
+/* вывод информации о хосте */
+printf("Host info: %s\n", $mysqli->host_info);
 
-echo $title;
+
+$link = mysqli_connect("localhost", "admin", "Ruslan29!", "lab2"); // Соединяемся с базой
+
+// Ругаемся, если соединение установить не удалось
+if (!$link) {
+    echo 'Не могу соединиться с БД. Код ошибки: ' . mysqli_connect_errno() . ', ошибка: ' . mysqli_connect_error();
+    exit;
+}
 
 $content = "<p>$title</p>";
 

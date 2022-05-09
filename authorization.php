@@ -2,12 +2,9 @@
 $title = "Вход";
 
 $content = "
-  <div>
-  
-  </div>
   
 ";
 
-include_once "layout.html";
+include_once "templates/layout.html";
 
 ?>
