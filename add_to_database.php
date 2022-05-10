@@ -40,4 +40,6 @@ if (isset($_POST['article_category']) &&
 /* закрытие соединения */
 $link->close();
 
+header("Location: create_edit_article.php");
+
 ?>
