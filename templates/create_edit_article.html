@@ -18,14 +18,7 @@
     <div>
         Категория:
         <select name="article_category">
-            <option value="Программирование">Программирование</option>
-            <option value="Математика">Математика</option>
-            <option value="Физика">Физика</option>
-            <option value="Химия">Химия</option>
-            <option value="Медицина">Медицина</option>
-            <option value="Литература">Литература</option>
-            <option value="Искусство">Искусство</option>
-            <option value="Экономика">Экономика</option>
+            <?= $filled_article_category; ?>
         </select>
     </div>
     <textarea name="editor1"><?= $filled_article_text; ?></textarea>

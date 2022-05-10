@@ -16,6 +16,19 @@ if (isset($_GET['snake_name_url'])) {
     $filled_article_author = $row['author'];
     $filled_article_date = date($row['date']);
 
+    $filled_article_category = "";
+
+    $categ = ["Программирование", "Математика", "Физика", "Химия", "Медицина", "Литература", "Искусство", "Экономика"];
+
+
+    for ($i = 0; $i < count($categ); $i++) {
+        if ($categ[$i] == $row['category']){
+            $filled_article_category = $filled_article_category . '<option selected value=" ' . $categ[$i] . ' ">' . $categ[$i] . '</option>';
+        } else {
+            $filled_article_category = $filled_article_category . '<option value="' . $categ[$i] . '">' . $categ[$i]. '</option>';
+        }
+    };
+
     include_once ("templates/create_edit_article.html");
 
     if(array_key_exists('sub', $_POST)){
@@ -36,6 +49,18 @@ else {
     $title = "Создать статью";
     include_once ("templates/header.html");
 
+    $filled_article_category = '
+            <option value="Программирование">Программирование</option>
+            <option value="Математика">Математика</option>
+            <option value="Физика">Физика</option>
+            <option value="Химия" selected>Химия</option>
+            <option selected value="Медицина">Медицина</option>
+            <option value="Литература">Литература</option>
+            <option value="Искусство">Искусство</option>
+            <option value="Экономика">Экономика</option>
+    ';
+
+
     include_once ("templates/create_edit_article.html");
 
     if(array_key_exists('sub', $_POST)){
@@ -52,7 +77,7 @@ else {
 
             $snake_name = str_replace(' ', '_', $snake_name);
 
-            $snake_name = str_replace(array('.',','),  '', $snake_name);
+            $snake_name = str_replace(array('.', ',', '-'),  '', $snake_name);
             //----------преобразователь в sneak_case----------
 
             $sql = mysqli_query($link,
