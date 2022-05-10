@@ -19,7 +19,7 @@ $content = $content . '
 
 // --------- выводим статьи ---------
 while($row = mysqli_fetch_array($sql)) {
-    $content = $content . '<a class="articles" href="article.php?snake_name=' . $row['0'] . '">' . $row['1'] . '<div>' . $row['2'] . '</div>' . '</a>';
+    $content = $content . "<a class='articles' href='article.php?snake_name={$row['0']}'>{$row['1']}<div>{$row['2']}</div></a>";
 }
 $content = $content . '</div>';
 // --------- выводим статьи ---------

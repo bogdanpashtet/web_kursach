@@ -1,12 +1,22 @@
-<form action="/create_edit_article.php" method="get">
+<form action="/add_to_database.php" method="post">
     <div>
         <label for="article_name">Название статьи:</label>
         <input type="text" id="article_name" name="article_name">
     </div>
 
     <div>
+        <label for="article_date">Дата написания статьи:</label>
+        <input type="date" id="article_date" name="article_date">
+    </div>
+
+    <div>
+        <label for="article_author">Автор статьи:</label>
+        <input type="text" id="article_author" name="article_author">
+    </div>
+
+    <div>
         Категория:
-        <select name="name_of_category" >
+        <select name="article_category" >
             <option selected value="Программирование">Программирование</option>
             <option value="Математика">Математика</option>
             <option value="Физика">Физика</option>
