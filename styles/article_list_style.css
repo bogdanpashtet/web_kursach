@@ -1,0 +1,10 @@
+.articles {
+    display: flex;
+    flex-direction: column;
+    color: #333333;
+    font-size: 14px;
+    margin: 3%;
+    padding: 3%;
+    border: #46a049 3px solid;
+    text-decoration: none !important;
+}
