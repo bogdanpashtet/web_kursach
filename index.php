@@ -12,7 +12,7 @@ $sql = mysqli_query($link, "SELECT snake_name, name, date FROM articles order by
 
 $content = file_get_contents("templates/main_page_template.html");
 
-// стили для списка статей
+// стили для списка статейЫ
 $content = $content . '
 <link rel="stylesheet" href="styles/article_list_style.css">
 <div>';

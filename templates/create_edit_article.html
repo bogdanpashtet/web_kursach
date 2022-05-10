@@ -1,6 +1,22 @@
 <form action="/create_edit_article.php" method="get">
-    <label for="article_name">Название статьи:</label>
-    <input type="text" id="article_name" name="article_name">
+    <div>
+        <label for="article_name">Название статьи:</label>
+        <input type="text" id="article_name" name="article_name">
+    </div>
+
+    <div>
+        Категория:
+        <select name="name_of_category" >
+            <option selected value="Программирование">Программирование</option>
+            <option value="Математика">Математика</option>
+            <option value="Физика">Физика</option>
+            <option value="Химия">Химия</option>
+            <option value="Медицина">Медицина</option>
+            <option value="Литература">Литература</option>
+            <option value="Искусство">Искусство</option>
+            <option value="Экономика">Экономика</option>
+        </select>
+    </div>
     <textarea name="editor1"></textarea>
     <input type="submit" value="Сохранить статью">
 
