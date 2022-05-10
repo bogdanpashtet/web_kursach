@@ -1,0 +1,15 @@
+#article_header {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 4%;
+}
+
+#article_author_date {
+    margin-top: 4%;
+    text-align: right;
+}
+
+table {
+    text-align: center;
+}

@@ -7,4 +7,5 @@ $content = "
 
 include_once "templates/layout.html";
 
+
 ?>

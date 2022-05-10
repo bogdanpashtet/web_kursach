@@ -1,23 +1,24 @@
+<div class="main-content">
 <form method="post">
     <div>
         <label for="article_name">Название статьи:</label>
-        <input type="text" id="article_name" name="article_name">
+        <input type="text" id="article_name" name="article_name" value="<?= $filled_article_name; ?>">
     </div>
 
     <div>
         <label for="article_date">Дата написания статьи:</label>
-        <input type="date" id="article_date" name="article_date">
+        <input type="date" id="article_date" name="article_date" value="<?= $filled_article_date; ?>">
     </div>
 
     <div>
         <label for="article_author">Автор статьи:</label>
-        <input type="text" id="article_author" name="article_author">
+        <input type="text" id="article_author" name="article_author" value="<?= $filled_article_author; ?>">
     </div>
 
     <div>
         Категория:
         <select name="article_category">
-            <option selected value="Программирование">Программирование</option>
+            <option value="Программирование">Программирование</option>
             <option value="Математика">Математика</option>
             <option value="Физика">Физика</option>
             <option value="Химия">Химия</option>
@@ -27,10 +28,11 @@
             <option value="Экономика">Экономика</option>
         </select>
     </div>
-    <textarea name="editor1"></textarea>
+    <textarea name="editor1"><?= $filled_article_text; ?></textarea>
     <input type="submit" name="sub" id="sub" value="Сохранить статью">
 
 <script>
   CKEDITOR.replace( 'editor1' );
 </script>
 </form>
+</div>

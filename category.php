@@ -2,6 +2,8 @@
 
 $title = $_GET['category'];
 
+include_once ("templates/header.html");
+
 $link = "";
 
 require_once("templates/connection.php");
@@ -21,6 +23,8 @@ while($row = mysqli_fetch_array($sql)) {
 $content = $content . '</div>';
 // --------- выводим статьи ---------
 
-include_once "templates/layout.html";
+include_once ("templates/main_part.html");
+
+include_once ("templates/footer.html");
 
 ?>

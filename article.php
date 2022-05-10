@@ -10,16 +10,15 @@ $row = mysqli_fetch_array($sql);
 
 $title = $row['name'];
 
-$content = "
-<h1>{$row['name']}</h1>
+include_once ("templates/header.html");
 
-<div>{$row['text']}</div>
+$name = $row['name'];
+$text = $row['text'];
+$author = $row['author'];
+$date = $row['date'];
 
-<div align='center'>
-    Автор статьи: {$row['author']}<br>
-    Год написания статьи: {$row['date']}
-</div>";
+include_once ("templates/article_template.html");
 
-include_once "templates/layout.html";
+include_once ("templates/footer.html");
 
 ?>

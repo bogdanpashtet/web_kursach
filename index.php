@@ -6,6 +6,8 @@ $title = "Архив статей";
 
 $link = "";
 
+include_once ("templates/header.html");
+
 require_once("templates/connection.php");
 
 $sql = mysqli_query($link, "SELECT snake_name, name, date FROM articles order by date desc limit 5;");
@@ -24,6 +26,9 @@ while($row = mysqli_fetch_array($sql)) {
 $content = $content . '</div>';
 // --------- выводим статьи ---------
 
-require_once "templates/layout.html";
+
+include_once ("templates/main_part.html");
+
+include_once ("templates/footer.html");
 
 ?>
