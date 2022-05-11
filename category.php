@@ -11,6 +11,8 @@ $title = $_GET['category'];
 
 include_once ("templates/header.html");
 
+include_once "templates/search.html";
+
 $link = new mysqli();
 require_once("templates/connection.php");
 

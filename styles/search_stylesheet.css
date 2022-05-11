@@ -1,0 +1,26 @@
+#search {
+    margin: 5% 10% 0 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 0 2% 0;
+}
+
+#fields {
+    border: #5bff75 2px solid;
+}
+
+.field {
+
+}
+
+#search_button {
+    font-size: 17px;
+    text-align: center;
+    padding: 10px 5% 10px 5%;
+}
+
+.dates {
+
+}
