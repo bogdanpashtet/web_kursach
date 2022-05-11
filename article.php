@@ -24,6 +24,10 @@ $text = $row['text'];
 $author = $row['author'];
 $date = $row['date'];
 
+if(isset($_SERVER['HTTP_REFERER'])) {
+    $previous = $_SERVER['HTTP_REFERER'];
+}
+
 include_once ("templates/article_template.html");
 
 include_once ("templates/footer.html");

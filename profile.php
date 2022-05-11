@@ -14,8 +14,7 @@ include_once "templates/header.html";
 $username = $enter;
 
 $link = "";
-
-require_once("templates/connection.php");
+require_once "templates/connection.php";
 
 $sql = mysqli_query($link, "SELECT snake_name, name, date FROM articles where owner = '" . $username . "';");
 
