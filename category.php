@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+if ($_SESSION['user']) {
+    $enter = $_SESSION['user']['login'];
+} else {
+    $enter = "Вход";
+}
+
 $title = $_GET['category'];
 
 include_once ("templates/header.html");
