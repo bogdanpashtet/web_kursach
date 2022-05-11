@@ -7,7 +7,7 @@ if ($_SESSION['user']) {
     $enter = "Вход";
 }
 
-$link = "";
+$link = new mysqli();
 
 require_once("templates/connection.php");
 
@@ -31,5 +31,3 @@ if(isset($_SERVER['HTTP_REFERER'])) {
 include_once ("templates/article_template.html");
 
 include_once ("templates/footer.html");
-
-?>

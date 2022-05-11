@@ -2,12 +2,14 @@
 session_start();
 
 if ($_SESSION['user']) {
+
     $enter = $_SESSION['user']['login'];
 
-    $link = "";
+    $link = new mysqli();
     require_once "templates/connection.php";
 
-    if (isset($_GET['snake_name_url'])) {
+    if (isset($_GET['snake_name_url'] )) {
+
         $title = "Изменить статью";
         include_once ("templates/header.html");
 
@@ -15,30 +17,31 @@ if ($_SESSION['user']) {
 
         $row = mysqli_fetch_array($sql);
 
-        $filled_article_name = $row['name'];
-        $filled_article_text = $row['text'];
-        $filled_article_author = $row['author'];
-        $filled_article_date = date($row['date']);
+        if ($enter === $row['owner'] or $_SESSION['user']['role'] === 1) {
 
-        $filled_article_category = "";
+            $filled_article_name = $row['name'];
+            $filled_article_text = $row['text'];
+            $filled_article_author = $row['author'];
+            $filled_article_date = date($row['date']);
 
-        $categ = ["Программирование", "Математика", "Физика", "Химия", "Медицина", "Литература", "Искусство", "Экономика"];
+            $filled_article_category = "";
 
+            $category_output = ["Программирование", "Математика", "Физика", "Химия", "Медицина", "Литература", "Искусство", "Экономика"];
 
-        for ($i = 0; $i < count($categ); $i++) {
-            if ($categ[$i] == $row['category']){
-                $filled_article_category = $filled_article_category . '<option selected value=" ' . $categ[$i] . ' ">' . $categ[$i] . '</option>';
-            } else {
-                $filled_article_category = $filled_article_category . '<option value="' . $categ[$i] . '">' . $categ[$i]. '</option>';
+            for ($i = 0; $i < count($category_output); $i++) {
+                if ($category_output[$i] == $row['category']) {
+                    $filled_article_category = $filled_article_category . '<option selected value=" ' . $category_output[$i] . ' ">' . $category_output[$i] . '</option>';
+                } else {
+                    $filled_article_category = $filled_article_category . '<option value="' . $category_output[$i] . '">' . $category_output[$i] . '</option>';
+                }
             }
-        };
 
-        include_once ("templates/create_edit_article.html");
+            include_once("templates/create_edit_article.html");
 
-        if(array_key_exists('sub', $_POST)){
+            if (array_key_exists('sub', $_POST)) {
 
-            $sql = mysqli_query($link,
-                "UPDATE articles SET 
+                $sql = mysqli_query($link,
+                    "UPDATE articles SET 
                     name = '{$_POST['article_name']}', 
                     author = '{$_POST['article_author']}', 
                     date = '{$_POST['article_date']}', 
@@ -46,6 +49,11 @@ if ($_SESSION['user']) {
                     text = '{$_POST['editor1']}' 
                 WHERE snake_name = '{$_GET['snake_name_url']}';
                         ");
+            }
+
+        } else {
+            $content = "У Вас нет прав на редактирование данной статьи.";
+            include_once "templates/main_part.html";
         }
 
     }
@@ -64,39 +72,31 @@ if ($_SESSION['user']) {
             <option value="Экономика">Экономика</option>
     ';
 
-
         include_once ("templates/create_edit_article.html");
 
         if(array_key_exists('sub', $_POST)){
 
-            if (isset($_POST['article_category']) &&
-                isset($_POST['article_name']) &&
-                isset($_POST['article_date']) &&
-                isset($_POST['article_author']) &&
-                isset($_POST['editor1']))
-            {
+            //----------преобразователь в sneak_case----------
+            $snake_name = mb_strtolower($_POST['article_name']);
 
-                //----------преобразователь в sneak_case----------
-                $snake_name = mb_strtolower($_POST['article_name']);
+            $snake_name = str_replace(' ', '_', $snake_name);
 
-                $snake_name = str_replace(' ', '_', $snake_name);
+            $snake_name = str_replace(array('.', ',', '-'),  '', $snake_name);
+            //----------преобразователь в sneak_case----------
 
-                $snake_name = str_replace(array('.', ',', '-'),  '', $snake_name);
-                //----------преобразователь в sneak_case----------
+            $sql = mysqli_query($link,
+                "INSERT INTO articles (name, author, date, category, snake_name, text, owner) VALUES(                                                                 
+                                                         '{$_POST['article_name']}',
+                                                         '{$_POST['article_author']}',
+                                                         '{$_POST['article_date']}',
+                                                         '{$_POST['article_category']}',
+                                                         '" . $snake_name . "',
+                                                         '{$_POST['editor1']}',
+                                                         '{$_SESSION['user']['login']}');
+                    ");
 
-                $sql = mysqli_query($link,
-                    "INSERT INTO articles (name, author, date, category, snake_name, text, owner) VALUES(
-                                                                     '{$_POST['article_name']}',
-                                                                     '{$_POST['article_author']}',
-                                                                     '{$_POST['article_date']}',
-                                                                     '{$_POST['article_category']}',
-                                                                     '{$snake_name}',
-                                                                     '{$_POST['editor1']}',
-                                                                     '{$_SESSION['user']['login']}'              );
-                        ");
-            }
 
-            header("Location: create_edit_article.php?snake_name_url={$snake_name}");
+            header("Location: create_edit_article.php?snake_name_url=" . $snake_name);
 
         }
     }
@@ -114,8 +114,6 @@ if ($_SESSION['user']) {
     include_once "templates/main_part.html";
 }
 
-
-
 include_once ("templates/footer.html");
 
-?>
+

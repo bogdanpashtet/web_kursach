@@ -17,7 +17,7 @@ unset($_SESSION['message']);
 
 if(array_key_exists('submit_button', $_POST)) {
 
-    $link = "";
+    $link = new mysqli();
     require_once 'templates/connection.php';
 
     $login = $_POST['login'];
@@ -44,5 +44,3 @@ if(array_key_exists('submit_button', $_POST)) {
 }
 
 include_once "templates/footer.html";
-
-?>

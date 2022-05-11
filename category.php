@@ -11,7 +11,7 @@ $title = $_GET['category'];
 
 include_once ("templates/header.html");
 
-$link = "";
+$link = new mysqli();
 require_once("templates/connection.php");
 
 $sql = mysqli_query($link, "SELECT snake_name, name, date FROM articles where category = '" . $title . "';");
@@ -22,5 +22,3 @@ $content = output_articles($sql);
 include_once ("templates/main_part.html");
 
 include_once ("templates/footer.html");
-
-?>

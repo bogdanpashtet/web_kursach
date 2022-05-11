@@ -9,10 +9,10 @@ if ($_SESSION['user']) {
 
 $title = "Архив статей";
 
-$link = "";
 
 include_once ("templates/header.html");
 
+$link = new mysqli();
 require_once("templates/connection.php");
 
 $sql = mysqli_query($link, "SELECT snake_name, name, date FROM articles order by date desc limit 5;");
@@ -25,5 +25,3 @@ $content = output_articles($sql, $content);
 include_once ("templates/main_part.html");
 
 include_once ("templates/footer.html");
-
-?>
