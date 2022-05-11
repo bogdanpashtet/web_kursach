@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $link = "";
 
 require_once("templates/connection.php");

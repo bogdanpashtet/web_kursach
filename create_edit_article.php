@@ -1,7 +1,7 @@
 <?php
-
+session_start();
 $link = "";
-require_once("templates/connection.php");
+require_once "templates/connection.php";
 
 if (isset($_GET['snake_name_url'])) {
     $title = "Изменить статью";

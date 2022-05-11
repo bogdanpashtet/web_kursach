@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $title = $_GET['category'];
 
 include_once ("templates/header.html");
