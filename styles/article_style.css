@@ -10,6 +10,11 @@
     text-align: right;
 }
 
+#article_author_date a {
+    text-decoration: none;
+    color: black;
+}
+
 table, img {
     text-align: center;
     align-items: center;

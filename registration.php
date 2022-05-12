@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ($_SESSION['user']) {
-    header('Location: profile.php');
+    header('Location: profile.php?id=' . $_SESSION['user']['login']);
 }
 
 $title = "Регистрация";

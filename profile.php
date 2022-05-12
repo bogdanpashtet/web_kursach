@@ -7,11 +7,16 @@ if ($_SESSION['user']) {
     header('Location: authorization.php');
 }
 
+$username = $_GET["id"];
+
+if ($_SESSION['user']['login'] == $username){
+    $exit = '<p class="logout"><a href="/logout.php">Выйти с профиля</a></p>';
+}
+
 $title = "Профиль";
 
 include_once "templates/header.html";
 
-$username = $enter;
 
 $link = "";
 require_once "templates/connection.php";
