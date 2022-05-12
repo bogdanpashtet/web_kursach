@@ -4,7 +4,7 @@ session_start();
 if ($_SESSION['user']) {
     $enter = $_SESSION['user']['login'];
 } else {
-    $enter = "Вход";
+    header('Location: authorization.php');
 }
 
 $title = "Профиль";

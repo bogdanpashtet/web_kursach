@@ -10,7 +10,7 @@ function output_articles ($sql, $content="") {
     while($row = mysqli_fetch_array($sql)) {
         $content = $content . "<a class='articles' href='article.php?snake_name={$row['0']}'>
                                 <div id='title'>{$row['1']}</div>
-                                <div class='author'>{$row['2']}</div></a>";
+                                <div id='author'>{$row['2']}</div></a>";
     }
 
     $content = $content . '</div>';

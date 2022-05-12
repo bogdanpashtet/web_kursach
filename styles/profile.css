@@ -1,0 +1,35 @@
+
+.profile_block {
+    text-align: left ;
+    background-color: #c9cbca;
+    padding: 2%;
+    margin: 1% 1% 1% 70%;
+}
+
+.logout a{
+    color: #b7625c;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.write_article {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 1% 5% 1% 5%;
+    margin: 0 40% 0 40% ;
+    color: white;
+    background-color: #04AA6D;
+    text-decoration: none;
+    border: #1f5a29 solid 2px;
+}
+
+.write_article:hover {
+    background-color: #1f5a29;
+}
+
+#your_articles {
+    margin-top: 3%;
+    font-size: 30px;
+    text-decoration: solid;
+}

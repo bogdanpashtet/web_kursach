@@ -1,12 +1,14 @@
 <link rel="stylesheet" href="/styles/profile.css">
 
 <main class="main-content">
-  <p>Пользователь: <?= $username; ?></p>
-  <p class="logout"><a href="/logout.php">Выйти с профиля</a></p>
+  <div class="profile_block">
+    <p>Пользователь: <?= $username; ?></p>
+    <p class="logout"><a href="/logout.php">Выйти с профиля</a></p>
+  </div>
 
-  <p><a href="/create_edit_article.php">Написать статью</a></p>
+  <p><a class="write_article" href="/create_edit_article.php">Написать статью</a></p>
 
-  <p>Ваши статьи: </p>
+  <p id="your_articles">Ваши статьи: </p>
 
   <?= $content; ?>
 
