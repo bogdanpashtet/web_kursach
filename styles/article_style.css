@@ -14,3 +14,29 @@ table, img {
     text-align: center;
     align-items: center;
 }
+
+.button1 {
+    align-items: center;
+    margin: 1% 40% 1% 40%;
+    padding: 2%;
+    background-color: #04AA6D;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    width: 170px;
+}
+
+.button1 a {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    width: 170px;
+}
+
+.button1:hover {
+    background-color: #1f5a29;
+}

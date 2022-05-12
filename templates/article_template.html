@@ -6,9 +6,11 @@
 
 <div id="article_author_date">
   Автор статьи: <?= $author; ?><br>
-  Год написания статьи: <?= $date; ?>
+  Год написания статьи: <?= $date; ?><br>
+  На сайт загрузил: <?= $owner; ?>
 </div>
 
-  <button id="back" class="btn cat_button"><a href="<?= $previous; ?>">Назад</a></button>
-  
+  <button class="button1"><a href="<?= $previous; ?>">Назад</a></button>
+  <?= $edit_article; ?>
+
 </div>
