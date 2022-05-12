@@ -35,7 +35,7 @@ if(array_key_exists('submit_button', $_POST)) {
             "status" => $user['status']
         ];
 
-        header('Location: profile.php');
+        header('Location: profile.php?id=' . $_SESSION['user']['login']);
 
     } else {
         $_SESSION['message'] = 'Не верный логин или пароль';
