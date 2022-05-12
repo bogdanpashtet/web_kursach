@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/styles/create_edit_style.css">
 
 <div class="main-content">
-<form method="post">
+<form name="form_create" onsubmit="return validate_creation_edition()" method="post">
     <div class="field">
         <label for="article_name">Название статьи:</label>
         <input type="text" id="article_name" name="article_name" value="<?= $filled_article_name; ?>">
@@ -26,8 +26,6 @@
     <textarea name="editor1"><?= $filled_article_text; ?></textarea>
     <input type="submit" name="sub" id="sub" value="Сохранить статью">
 
-<script>
-  CKEDITOR.replace( 'editor1' );
-</script>
+    <script src="/scripts/validate_creation_edit_form.js"></script>
 </form>
 </div>
