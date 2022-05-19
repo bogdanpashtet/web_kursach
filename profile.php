@@ -5,12 +5,14 @@ if ($_SESSION['user']) {
     $enter = $_SESSION['user']['login'];
 } else {
     header('Location: authorization.php');
+    $_SESSION['message'] = 'Чтобы просмотреть профиль участников - сначала зарегистрируйтесть или авторизируйтесь на сайте.';
 }
 
 $username = $_GET["id"];
 
 if ($_SESSION['user']['login'] == $username){
     $exit = '<p class="logout"><a href="/logout.php">Выйти с профиля</a></p>';
+    $create_article = '<p><a class="write_article" href="/create_edit_article.php">Написать статью</a></p>';
 }
 
 $title = "Профиль";

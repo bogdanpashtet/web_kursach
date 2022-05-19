@@ -52,8 +52,8 @@ if ($_SESSION['user']) {
             }
 
         } else {
-            $content = "У Вас нет прав на редактирование данной статьи.";
-            include_once "templates/main_part.html";
+            $msg = '<p class="msg"> ' . 'У Вас нет прав на редактирование данной статьи.' . ' </p>';
+            include_once "templates/error_page.html";
         }
 
     }
@@ -109,9 +109,9 @@ if ($_SESSION['user']) {
     $title = "Создать статью";
     include_once ("templates/header.html");
 
-    $content = "Сначала зарегистрируйтесь на сайте";
+    $msg = '<p class="msg"> ' . 'Сначала авторизируйтесь на сайте' . ' </p>';
 
-    include_once "templates/main_part.html";
+    include_once "templates/error_page.html";
 }
 
 include_once ("templates/footer.html");

@@ -9,6 +9,10 @@
     text-decoration: none !important;
 }
 
+.articles:hover {
+    background-color: #dbfbad;
+}
+
 #title {
     text-decoration: solid;
     text-align: center;
