@@ -17,7 +17,7 @@ if ($_SESSION['user']) {
 
         $row = mysqli_fetch_array($sql);
 
-        if ($enter === $row['owner'] or $_SESSION['user']['role'] === 1) {
+        if ($enter === $row['owner'] or !($_SESSION['user']['role'] == 0)) {
 
             $filled_article_name = $row['name'];
             $filled_article_text = $row['text'];
