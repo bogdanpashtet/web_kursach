@@ -2,8 +2,7 @@ CKEDITOR.replace( 'editor1' );
 
 function validate_creation_edition() {
     var x = document.forms["form_create"]["article_name"].value;
-    if ( (x === "") &&
-        x.match(/[a-zA-Z]/i)) {
+    if (x === ""){
         alert("Введите корректное название");
         return false;
     }
