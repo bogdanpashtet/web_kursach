@@ -15,6 +15,11 @@ if ($_SESSION['user']['login'] == $username){
     $create_article = '<p><a class="write_article" href="/create_edit_article.php">Написать статью</a></p>';
 }
 
+if ($_SESSION['user']['role'] == 1 && !($_SESSION['user']['login'] == $username)){
+    $exit = '<p class="logout"><a href="/logout.php">Заблокировать пользователя.</a></p>
+             <p class="logout"><a href="/logout.php">Дать права редактора.</a></p>';
+}
+
 $title = "Профиль";
 
 include_once "templates/header.html";
