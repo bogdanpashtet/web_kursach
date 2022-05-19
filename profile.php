@@ -16,8 +16,8 @@ if ($_SESSION['user']['login'] == $username){
 }
 
 if ($_SESSION['user']['role'] == 1 && !($_SESSION['user']['login'] == $username)){
-    $exit = '<p class="logout"><a href="/logout.php">Заблокировать пользователя.</a></p>
-             <p class="logout"><a href="/logout.php">Дать права редактора.</a></p>';
+    $exit = '<p class="logout"><a href="/block.php?username=' . $username . '">Заблокировать пользователя.</a></p>
+             <p class="logout"><a href="/make_editor.php?username=' . $username . '">Дать права редактора.</a></p>';
 }
 
 $title = "Профиль";
