@@ -1,19 +1,19 @@
 <link rel="stylesheet" href="/styles/search_stylesheet.css">
 
-  <form method="get" id="search">
+  <form method="post" id="search">
     <div id="fields">
-      <input type="text" id="article_name" name="article_name" placeholder="Название статьи" width="50">
+        Категория:
+        <select name="category">
+            <?= $filled_article_category; ?>
+        </select>
 
-      <input type="text" id="article_author" name="article_author" placeholder="Автор статьи">
-      <div class="dates">
         Начало:
-        <input type="date" id="article_date_start" name="article_date_start" placeholder="Дата написания статьи">
+        <input type="date" id="article_date_start" name="article_date_start" value="2000-01-01">
 
         Конец:
-        <input type="date" id="article_date_end" name="article_date_end" placeholder="Дата написания статьи">
-      </div>
+        <input type="date" id="article_date_end" name="article_date_end" value="<?php echo date('Y-m-j'); ?>">
     </div>
 
-    <input id="search_button" type="submit" value="Найти">
+    <input class="search_button" type="submit" name="sub" id="sub" value="Найти">
 
   </form>

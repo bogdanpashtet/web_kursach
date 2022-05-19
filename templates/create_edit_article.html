@@ -1,6 +1,9 @@
 <link rel="stylesheet" href="/styles/create_edit_style.css">
 
 <div class="main-content">
+
+    <?= $msg; ?>
+
 <form name="form_create" onsubmit="return validate_creation_edition()" method="post">
     <div class="field">
         <label for="article_name">Название статьи:</label>
@@ -9,7 +12,7 @@
 
     <div class="field">
         <label for="article_date">Дата написания статьи:</label>
-        <input type="date" id="article_date" name="article_date" value="<?= $filled_article_date; ?>">
+        <input type="date" id="article_date" name="article_date" value="<?= $filled_article_date; ?>" min="2000-01-01">
     </div>
 
     <div class="field">

@@ -13,6 +13,12 @@ if ($_SESSION['user']) {
         $title = "Изменить статью";
         include_once ("templates/header.html");
 
+        if ($_SESSION['message']) {
+            $msg = '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
+        }
+
+        unset($_SESSION['message']);
+
         $sql = mysqli_query($link, "SELECT * FROM articles where snake_name = '" . $_GET['snake_name_url'] . "';");
 
         $row = mysqli_fetch_array($sql);
@@ -49,6 +55,8 @@ if ($_SESSION['user']) {
                     text = '{$_POST['editor1']}' 
                 WHERE snake_name = '{$_GET['snake_name_url']}';
                         ");
+
+                $_SESSION['message'] = 'Статья успешно сохранена.';
             }
 
         } else {
@@ -95,8 +103,10 @@ if ($_SESSION['user']) {
                                                          '{$_SESSION['user']['login']}');
                     ");
 
+            $_SESSION['message'] = 'Статья успешно сохранена.';
 
             header("Location: create_edit_article.php?snake_name_url=" . $snake_name);
+
 
         }
     }
