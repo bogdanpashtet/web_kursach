@@ -20,16 +20,19 @@ $title = "Профиль";
 include_once "templates/header.html";
 
 
-$link = "";
+$link = new mysqli();
 require_once "templates/connection.php";
 
 $sql = mysqli_query($link, "SELECT snake_name, name, date FROM articles where owner = '" . $username . "';");
 
-require_once "functions/output_articles_func.php";
-$content = output_articles($sql);
+if (mysqli_num_rows($sql) === 0) {
+    $content = "<div class='empty'>Здесь пока ничего нет :(</div>";
+}
+else{
+    require_once "functions/output_articles_func.php";
+    $content = output_articles($sql);
+}
 
 include_once "templates/profile_template.html";
 
 include_once "templates/footer.html";
-
-?>

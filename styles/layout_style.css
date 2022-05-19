@@ -73,3 +73,9 @@ body {
     background: #2c14f1;
     color: white;
 }
+
+.empty {
+    text-align: center;
+    font-size: 18px;
+    height: 400px;
+}

@@ -10,8 +10,4 @@ function validate_creation_edition() {
         alert("Введите автора");
         return false;
     }
-    if (document.forms["form_create"]["editor1"].value === "") {
-        alert("Введите текст");
-        return false;
-    }
 }

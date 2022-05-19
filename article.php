@@ -23,7 +23,7 @@ $name = $row['name'];
 $text = $row['text'];
 $author = $row['author'];
 $date = $row['date'];
-$owner = "<a href='profile.php?id={$row['owner']}'>{$row['owner']}</a>";
+$owner = "<a id='owner' href='profile.php?id={$row['owner']}'>{$row['owner']}</a>";
 
 if(isset($_SERVER['HTTP_REFERER'])) {
     $previous = $_SERVER['HTTP_REFERER'];
