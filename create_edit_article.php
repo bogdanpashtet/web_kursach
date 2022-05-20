@@ -57,6 +57,10 @@ if ($_SESSION['user']) {
                         ");
 
                 $_SESSION['message'] = 'Статья успешно сохранена.';
+
+                $snake_name = $_GET['snake_name_url'];
+
+                header("Location: create_edit_article.php?snake_name_url=" . $snake_name);
             }
 
         } else {

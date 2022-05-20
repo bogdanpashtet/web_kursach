@@ -42,7 +42,7 @@ if(array_key_exists('submit_button', $_POST)) {
 
     $col = mysqli_fetch_array($sql1);
 
-    header("Location: profile.php");
+    header("Location: profile.php?id=" . $enter);
 }
 
 
