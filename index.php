@@ -9,7 +9,6 @@ if ($_SESSION['user']) {
 
 $title = "Архив статей";
 
-
 include_once ("templates/header.html");
 
 $link = new mysqli();

@@ -46,7 +46,7 @@ if ($_SESSION['user']['role'] == 2 && !($_SESSION['user']['login'] == $username)
              <p class="logout"><a href="/make_editor.php?id=' . $username . '">Изменить роль.</a></p>';
 }
 
-if ($_SESSION['user']['role'] == 1 && !($_SESSION['user']['login'] == $username)) {
+if ($_SESSION['user']['role'] == 1 && !($_SESSION['user']['login'] == $username) && $role="Пользователь") {
     $exit = '<p class="logout"><a href="/block.php?id=' . $username . '">Изменить статус.</a></p>';
 }
 
